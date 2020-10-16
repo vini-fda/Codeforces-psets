@@ -20,8 +20,9 @@ int main() {
 
     char* reversed = reverse_string(s, strlen(s));
     int r = strcmp(t, reversed);
-    (r == 0) ? printf("YES") : printf("NO");
+    (r == 0) ? printf("YES\n") : printf("NO\n");
 
+    free(reversed);
 
     return 0;
 }

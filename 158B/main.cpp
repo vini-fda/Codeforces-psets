@@ -26,9 +26,7 @@ int main()
     //2 groups of 2 children can fit evenly in a taxi
     min_taxis += groups[2] / 2;
     groups[2] %= 2;
-    //Lonely children can fit in a taxi
-    min_taxis += groups[1] / 4;
-    groups[1] %= 4;
+
     //---------------
     //Groups with 3 children may go with a lonely child
     //If there are no more lonely children, there will
@@ -38,6 +36,11 @@ int main()
             groups[1]--;
         min_taxis++;
     }
+    //Lonely children can fit in a taxi
+    min_taxis += groups[1] / 4;
+    groups[1] %= 4;
+
+
     //If there is a couple of children
     if(groups[2] == 1) {
         //If there are 0, 1 or 2 lonely children
